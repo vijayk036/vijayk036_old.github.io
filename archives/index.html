@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | appLitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="information about various emerging technologies">
+<meta property="og:type" content="website">
+<meta property="og:title" content="appLitter">
+<meta property="og:url" content="http://applitter.com/archives/">
+<meta property="og:site_name" content="appLitter">
+<meta property="og:description" content="information about various emerging technologies">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="appLitter">
+<meta name="twitter:description" content="information about various emerging technologies">
+
+  
+    <link rel="alternative" href="/atom.xml" title="appLitter" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">appLitter</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://applitter.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Getting-Started-with-cordova" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/22/Getting-Started-with-cordova/" class="article-date">
+  <time datetime="2014-10-21T18:58:00.000Z" itemprop="datePublished">Oct 22 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/22/Getting-Started-with-cordova/">Getting Started with cordova</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Cordova is a platform to build native mobile applications in HTML,CSS and Javascript. Cordova enables you to access native device functionality such as camera,contacts, bluetooth etc using cordova plugins.  </p>
+<h2 id="Difference_between_cordova_and_phoneGap">Difference between cordova and phoneGap</h2>
+<p>There are some confusion about phoneGap and cordova, as far as codebase is concerned there is no difference between them. Phonegap is a command that encapsulates cordova, major difference is that phonegap has a remote build capability known as phoneGap build whereas cordova supports local builds, you can find more information about this <a href="http://phonegap.com/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/" target="_blank" rel="external">here</a>. In this blog series I will create simple cordova application and add barcode scanner plugins to it.  </p>
+<p>To bigin with, lets <a href="http://nodejs.org/" target="_blank" rel="external">download node</a> and install it. Node is a platform to build network application rapidly. Node has been built on chromes v8 engine, and uses javascript as a programming language. Over the time javascript has evolved as powerfull server side language all thanks to its huge developer base.</p>
+<p>Node has a powerfull package manager i.e., npm which helps in downloading packages and there dependencies without much of a hastle. Once node has been installed, open the command prompt and type command (npm package manager will be installed along with node)  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm</div></pre></td></tr></table></figure>
+
+<p>you should see all the commands possible with npm<br><img src="&quot;&quot;" alt="npm"></p>
+<h2 id="Install_cordova">Install cordova</h2>
+<p>To install cordova execute “npm install -g cordova”.<br>Guys behind proxy, to set proxy parameters ,execute following command :</p>
+<p>set HTTP_PROXY=<a href="http://user:password@proxy.domain.com:port" target="_blank" rel="external">http://user:password@proxy.domain.com:port</a><br>set HTTPS_PROXY=<a href="http://user:password@proxy.domain.com:port" target="_blank" rel="external">http://user:password@proxy.domain.com:port</a>.</p>
+<p>now you can execute “cordova” command to see if it is installed properly, you should see all the cordova related commands.Once cordova installation is confirmed, execute following command to create cordova project.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova create E:\programs\barcodeScanner com.enterprisemobility.barcodeScanner barcodeScanner</div></pre></td></tr></table></figure>
+
+<p>now do “cd barcodeScanner” and execute the command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova platform add android</div></pre></td></tr></table></figure>
+
+<p>this command adds specified platform (i.e., android) to the cordova project.<br>Execute command </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cordova run --device or </div><div class="line">cordova run --emulator</div></pre></td></tr></table></figure>
+
+<p>application should start on device if device is connected or else you should execute above command with —emulator option so that emulator gets opened. On device/emulator screen you can see default cordova app.</p>
+<p>Thats it :) you have created your first html5 app with cordova.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://applitter.com/2014/10/22/Getting-Started-with-cordova/" data-id="y7rrm305lilwe8o6" class="article-share-link">Share</a>
+      
+        <a href="http://applitter.com/2014/10/22/Getting-Started-with-cordova/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5-barcodescanner-cordova-phonegap-hybrid-app-CLI/">html5,barcodescanner,cordova,phonegap,hybrid app,CLI</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/html5-barcodescanner-cordova-phonegap-hybrid-app-CLI/">html5,barcodescanner,cordova,phonegap,hybrid app,CLI</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/cordova-phoneGap-html5-app-packaging-hybrid-app/" style="font-size: 10.00px;">cordova, phoneGap, html5 app packaging, hybrid app, </a><a href="/tags/html5-barcodescanner-cordova-phonegap-hybrid-app-CLI/" style="font-size: 20.00px;">html5,barcodescanner,cordova,phonegap,hybrid app,CLI</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/10/22/Getting-Started-with-cordova/">Getting Started with cordova</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 Vijaykumar S<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'applitter';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
