@@ -55,8 +55,8 @@ $.ajax({
 });
 }
        // peercall = new Peer($('#set-callid').val(), { debug: 3, host: '192.163.203.79', port: 9999,config:customConfig});
-       //
- peercall = new Peer($('#set-callid').val(), { debug: 3, host: '192.163.203.79', port: 8000,config: customConfig});
+       //52.21.74.114
+ peercall = new Peer($('#set-callid').val(), { debug: 3, host: 'peerjs-vijayk036.rhcloud.com', port: 8000,path:'/myapp',config: customConfig});
 //peercall = new Peer({ key: '9a51f317-225f-48e9-b9f7-fc73f256788c',debug: 3,config: customConfig});
         peercall.on('open', function () {
             alert(peercall.id);
