@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<title>SAPUI5 tutorial</title>
+
+<script id='sap-ui-bootstrap'
+    src='https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js'
+    type="text/javascript"
+    data-sap-ui-theme='sap_bluecrystal'
+    data-sap-ui-libs='sap.m'
+    data-sap-ui-compatVersion='edge'
+    data-sap-ui-preload='async'>
+</script>
+
+
+	<script type="text/javascript">
+		//sapui5 init event, on init, add UI5 controls to the HTML5 page
+		sap.ui.getCore().attachInit(function () {
+			// add some content here, to div
+
+			//create sapui5 button and place it at "content div"
+
+			var button=new sap.m.Button({text:"Next Page",
+                                          press:function(){
+                                                   app.to("page2");
+                                          }
+		});
+			//below code places button on "content" div tag
+
+			//creating instance of the page
+
+			var page = new sap.m.Page("page", {
+							title : "SAPUI5 Page",
+							showNavButton : false,
+							content : [button]
+						});
+
+			// create a mobile app and display page initially
+						var app = new sap.m.App("myApp", {
+							initialPage: "page"
+						});
+						var page2 = new sap.m.Page("page2", {
+												title : "SAPUI5 page2",
+												showNavButton : true,
+												navButtonPress : function () {
+													// go back to the previous page
+													app.back();
+												}
+								});
+
+						app.addPage(page).addPage(page2);
+
+			app.placeAt('content');
+
+                 })
+	</script>
+
+</head>
+<body class='sapUiBody'>
+    <div id='content'></div>
+</body>
+</html>
